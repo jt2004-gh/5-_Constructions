@@ -1,0 +1,621 @@
+<!-- Developers:        Description: Structure of the Whole Home Remodel Section (HTML)
+     Jason Truong
+     Mohit Singh
+     Anthony Turcanu
+     Harjas Kariha -->
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Whole Home Remodel | 5& Construction</title>
+    <link rel="stylesheet" type="text/css" href="5_&_Construction.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        /* Header */
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+            padding-top: 120px;
+        }
+
+
+        header {
+            position: fixed;
+            width: 100%;
+            height: 14%;
+            z-index: 1000;
+            background: transparent;
+            backdrop-filter: blur(10px);
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue';
+            font-size: 2.5rem;
+            color: darkorange;
+            text-decoration: none;
+            letter-spacing: 3px;
+        }
+
+        body {
+            background-color: floralwhite;
+            font-family: 'Roboto', sans-serif;
+            color: darkorange;
+            margin: 0;
+            line-height: 1.6;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: floralwhite;
+            min-width: 250px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border: 2px solid darkorange;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: darkorange;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: antiquewhite;
+        }
+
+        .contact-dropdown {
+            padding: 15px;
+            min-width: 300px;
+        }
+
+        .contact-dropdown p {
+            color: darkorange;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-dropdown i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .dropbtn .fa-caret-down {
+            margin-left: 5px;
+            font-size: 0.8em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue';
+            font-size: 2.5rem;
+            color: darkorange;
+            text-decoration: none;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: darkorange;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: darkorange;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+        /* Whole Home Remdoling Styling */
+                .whole-home-remodel-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: darkorange;
+        }
+
+        .whole-home-remodel-content .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .whole-home-remodel-content .content-wrapper {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .whole-home-showcase {
+            margin-bottom: 30px;
+        }
+
+        .whole-home-images {
+            display: flex;
+            gap: 20px;
+        }
+
+        .main-whole-home-image {
+            width: 60%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .secondary-images {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 40%;
+        }
+
+        .secondary-image {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .whole-home-remodel-content h2 {
+            text-align: left;
+            color: darkorange;
+            border-bottom: 3px solid darkorange;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .whole-home-remodel-content h3 {
+            color: darkorange;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid darkorange;
+            padding-bottom: 10px;
+        }
+
+        .whole-home-benefits ul,
+        .remodel-process ul {
+            background-color: orange;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .whole-home-benefits li,
+        .remodel-process li {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .whole-home-benefits li strong,
+        .remodel-process li strong {
+            color: darkorange;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .remodel-options .options-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .remodel-options .option-item {
+            background-color: antiquewhite;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .remodel-options .option-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .remodel-options .option-item h4 {
+            color: darkorange;
+            margin-bottom: 10px;
+        }
+
+        .call-to-action {
+            text-align: center;
+            background-color: antiquewhite;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .call-to-action h3 {
+            color: darkorange;
+            margin-bottom: 15px;
+            border-bottom: none;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: darkorange;
+            color: floralwhite;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            background-color: orange;
+        }
+
+        /* Existing navigation styles from previous file */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: floralwhite;
+            min-width: 250px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border: 2px solid darkorange;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: darkorange;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: antiquewhite;
+        }
+
+        .contact-dropdown {
+            padding: 15px;
+            min-width: 300px;
+        }
+
+        .contact-dropdown p {
+            color: darkorange;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-dropdown i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .dropbtn .fa-caret-down {
+            margin-left: 5px;
+            font-size: 0.8em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue';
+            font-size: 2.5rem;
+            color: darkorange;
+            text-decoration: none;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: darkorange;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: darkorange;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Whole Home Remodel</h1>
+	<header>
+        <nav>
+            <a href="5& Construction.html" class="logo">5& Construction.</a>
+            <div class="nav-links">
+                <a href="5& Construction.html#home">Home</a>
+                <a href="5& Construction.html#about">About</a>
+                <div class="dropdown">
+                    <a href="5& Construction.html#services" class="dropbtn">Services <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="Kitchen Remodel.html">Kitchen Remodel</a>
+                        <a href="Bathroom Remodel.html">Bathroom Remodel</a>
+                        <a href="Basement Remodel.html">Basement Remodel</a>
+                        <a href="Whole Home Remodel.html">Whole Home Remodel</a>
+                        <a href="Home Additions.html">Home Additions</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="5& Construction.html#contact" class="dropbtn">Contact Info <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content contact-dropdown">
+                        <p><i class="fas fa-phone"></i> (253) 740-3355</p>
+                        <p><i class="fas fa-envelope"></i> five_andconstruction@outlook.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 2115 S 380TH ST, Federal Way, WA 98003</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 6AM - 5PM</p>
+                    </div>
+                </div>
+                <a href="5& Construction.html#quote">Get a Quote</a>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <section class="whole-home-remodel-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <h2>Complete Home Transformation: Reimagine Your Living Space</h2>
+                
+                <div class="whole-home-showcase">
+                    <div class="whole-home-images">
+                        <img src="full_view1.jpeg" alt="Whole Home Remodel Full View" class="main-whole-home-image">
+                        <div class="secondary-images">
+                            <img src="full_view2.jpeg" alt="Home Interior Transformation" class="secondary-image">
+                            <img src="campfire_entrance.jpeg" alt="Elegant Home Entrance" class="secondary-image">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="whole-home-benefits">
+                    <h3>Why Choose a Whole Home Remodel?</h3>
+                    <ul>
+                        <li>
+                            <strong>Maximize Property Value</strong>
+                            A comprehensive remodel can significantly increase your home's market value and appeal to potential buyers.
+                        </li>
+                        <li>
+                            <strong>Personalized Living Experience</strong>
+                            Create a cohesive design that reflects your unique style and meets your family's specific needs.
+                        </li>
+                        <li>
+                            <strong>Modern Functionality</strong>
+                            Upgrade your home's layout, technology, and efficiency to match contemporary living standards.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="remodel-process">
+                    <h3>Our Whole Home Remodeling Approach</h3>
+                    <ul>
+                        <li>
+                            <strong>Initial Consultation</strong>
+                            We discuss your vision, needs, budget, and specific requirements to create a personalized addition plan.
+                        </li>
+                        <li>
+                            <strong>Detailed Design Planning</strong>
+                            Our designers create detailed sketched of your whole house request.
+                        </li>
+                        <li>
+                            <strong>Material Selection</strong>
+                            Choose from remium materials the customer wants for their house renovation.
+                        </li>
+                        <li>
+                            <strong>Precise Construction</strong>
+                            Our expert craftsmen execute the project with minimal disruption.
+                        </li>
+                        <li>
+                            <strong>Final Walkthrough</strong>
+                            We add finishing touches to complete your home's new look, give a final walkthrough and review to the you, and ensure every detail meets our high standards and your expectations.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="remodel-options">
+                    <h3>Whole Home Remodeling Options</h3>
+                    <div class="options-grid">
+                        <div class="option-item">
+                            <h4>Complete Transformation</h4>
+                            <p>Full home renovation including structural changes, layout modifications, and complete interior redesign.</p>
+                        </div>
+                        <div class="option-item">
+                            <h4>Phased Renovation</h4>
+                            <p>Strategic room-by-room remodeling to manage budget and minimize disruption.</p>
+                        </div>
+                        <div class="option-item">
+                            <h4>Smart Home Integration</h4>
+                            <p>Incorporate cutting-edge technology and energy-efficient solutions throughout your home.</p>
+                        </div>
+                        <div class="option-item">
+                            <h4>Custom Space Planning</h4>
+                            <p>Optimize room layouts and create multi-functional spaces tailored to your lifestyle.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="call-to-action">
+                    <h3>Ready to Reimagine Your Entire Home?</h3>
+                    <p>Contact 5& Construction for a free whole home remodel consultation and quote.</p>
+                    <br>
+                    <a href="5& Construction.html#quote" class="cta-button">Get Your Free Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+	<footer>
+        <div class="footer-container">
+            <!-- Logo and company info section -->
+            <div class="footer-column">
+                <a href="5& Construction.html" class="footer-logo">5& Construction.</a>
+                <p class="footer-tagline">Building Future Projects Today.</p>
+                <h3>Code Developers:</h3>
+                <p>Jason Truong: <a href="https://www.linkedin.com/in/jason-truong-9a0911354/">Linkedin</a></p>
+                <p>Anthony Turcanu: <a href="www.linkedin.com/in/anthony-turcanu-665177354">Linkedin</a></p>
+                <p>Harjas Kariha: <a href="https://www.linkedin.com/in/harjas-kariha-a5812623a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Linkedin</a></p>
+                <p>Mohit Singh: <a href="https://www.linkedin.com/">Linkedin</a></p>
+            </div>
+            
+            <!-- Quick links section -->
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="5& Construction.html#home">Home</a></li>
+                    <li><a href="5& Construction.html#about">About</a></li>
+                    <li><a href="5& Construction.html#services">Services</a></li>
+                    <li><a href="Projects.html">Projects</a></li>
+                    <li><a href="5& Construction.html#contact">Contact</a></li>
+                    <li><a href="5& Construction.html#quote">Get a Quote</a></li>
+                </ul>
+            </div>
+            
+            <!-- Services section -->
+            <div class="footer-column">
+                <h4>Our Services</h4>
+                <ul class="footer-links">
+                    <li><a href="Kitchen Remodel.html">Kitchen Remodel</a></li>
+                    <li><a href="Bathroom Remodel.html">Bathroom Remodel</a></li>
+                    <li><a href="Basement Remodel.html">Basement Remodel</a></li>
+                    <li><a href="Whole Home Remodel.html">Whole Home Remodel</a></li>
+                    <li><a href="Home Additions.html">Home Additions</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact info section -->
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> 2115 S 380TH ST, Federal Way, WA 98003</p>
+                    <p><i class="fas fa-phone"></i> (253) 740-3355</p>
+                    <p><i class="fas fa-envelope"></i> five_andconstruction@outlook.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 6AM - 5PM</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom copyright bar -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 5& Construction.Inc. All Rights Reserved</p>
+            <div class="footer-legal">
+                <a href="Privacy Policy.html">Privacy Policy</a>
+                <a href="Terms of Service.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

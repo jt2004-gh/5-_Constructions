@@ -1,0 +1,217 @@
+<!-- Developers:		Description: Structure of the project gallery (HTML)
+	 Jason Truong
+	 Mohit Singh
+	 Anthony Turcanu
+	 Harjas Kariha -->
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Our Projects | 5 Star Construction</title>
+	<link rel="stylesheet" type="text/css" href="Projects.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<!-- Credit: YouTube: Bro Code - How to create a CSS image gallery in 5 minutes! 📷
+https://www.youtube.com/watch?v=uu0lOX6Ot3s -->
+<!--Jason Truong, Mohit Singh - Formating-->
+<!--Harjas Kariha, Anthony Turcanu Photo, alt-->
+<header>
+    <nav>
+        <a href="5& Construction.html" class="logo">5& Construction.</a>
+        <div class="nav-links">
+            <a href="5& Construction.html#home">Home</a>
+            <a href="5& Construction.html#about">About</a>
+            <div class="dropdown">
+                <a href="5& Construction.html#services" class="dropbtn">Services <i class="fas fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="Kitchen Remodel.html">Kitchen Remodel</a>
+                    <a href="Bathroom Remodel.html">Bathroom Remodel</a>
+                    <a href="Basement Remodel.html">Basement Remodel</a>
+                    <a href="Whole Home Remodel.html">Whole Home Remodel</a>
+                    <a href="Home Additions.html">Home Additions</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="5& Construction.html#contact" class="dropbtn">Contact Info <i class="fas fa-caret-down"></i></a>
+                <div class="dropdown-content contact-dropdown">
+                    <p><i class="fas fa-phone"></i> (253) 740-3355</p>
+                    <p><i class="fas fa-envelope"></i> five_andconstruction@outlook.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 2115 S 380TH ST, Federal Way, WA 98003</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 6AM - 5PM</p>
+                </div>
+            </div>
+            <a href="5& Construction.html#quote">Get a Quote</a>
+        </div>
+    </nav>
+</header>
+
+
+
+
+
+<!-- Title + clickable photos with description -->
+<h1>Our Projects</h1>
+	<div class="gallery-container">
+		<div class="gallery">
+
+			<div class="gallery-item" onclick="openPopup(0)">
+				<img src="living_area1.jpeg" alt="Living Space 1" class="gallery-image">
+				<div class="gallery-caption">Living Area</div>
+			</div>
+
+			<div class="gallery-item" onclick="openPopup(1)">
+				<img src="living_area2.jpeg" alt="Living Space 2" class="gallery-image">
+				<div class="gallery-caption">Living Area</div>
+			</div>
+
+			<div class="gallery-item" onclick="openPopup(2)">
+				<img src="kitchen.jpeg" alt="Kitchen" class="gallery-image">
+				<div class="gallery-caption">Kitchen</div>
+			</div>
+
+			<div class="gallery-item" onclick="openPopup(3)">
+				<img src="full_view1.jpeg" alt="Full View" class="gallery-image">
+				<div class="gallery-caption">Full Living Space View</div>
+			</div>
+
+			<div class="gallery-item" onclick="openPopup(4)">
+				<img src="full_view2.jpeg" alt="Full View" class="gallery-image">
+				<div class="gallery-caption">Full Living Space View</div>
+			</div>
+
+			<div class="gallery-item" onclick="openPopup(5)">
+				<img src="kitchen_view.jpeg" alt="Kitchen View" class="gallery-image">
+				<div class="gallery-caption">View of the Entire Kitchen</div>
+			</div>
+
+			<div class="gallery-item" onclick="openPopup(6)">
+				<img src="pov_kitchen.jpeg" alt="POV Kitchen" class="gallery-image">
+				<div class="gallery-caption">Close Up View of the Kitchen</div>
+			</div>
+
+			<div class="gallery-item" onclick="openPopup(7)">
+				<img src="campfire_entrance.jpeg" alt="Campfire Entrance" class="gallery-image">
+				<div class="gallery-caption">View of the Entrance Indoors</div>
+			</div>
+
+			<div class="gallery-item" onclick="openPopup(8)">
+				<img src="bathroom.jpeg" alt="Bathroom" class="gallery-image">
+				<div class="gallery-caption">Bathroom</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<!--Popup feature + caption description -->
+	<!-- Credit: SoloLearn -->
+    <div class="popup" id="popup">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <span class="nav-arrow left" onclick="prevImage()">&#10094;</span>
+        <div class="popup-content">
+        	<img id="popup-img" src="">
+        	<div id="popup-caption" class="popup-caption"></div>
+        </div>
+        <span class="nav-arrow right" onclick="nextImage()">&#10095;</span>
+    </div>
+
+    <script>
+        let images = ["living_area1.jpeg", "living_area2.jpeg", "kitchen.jpeg", "full_view1.jpeg", "full_view2.jpeg", "kitchen_view.jpeg", "pov_kitchen.jpeg", "campfire_entrance.jpeg", "bathroom.jpeg"];
+        let currentIndex = 0;
+
+        function openPopup(index) {
+            currentIndex = index;
+            document.getElementById("popup-img").src = images[currentIndex];
+            document.getElementById("popup-caption").textContent = document.querySelectorAll(".gallery-caption")[index].textContent;
+            document.getElementById("popup").style.display = "flex";
+        }
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            document.getElementById("popup-img").src = images[currentIndex];
+            document.getElementById("popup-caption").textContent = document.querySelectorAll(".gallery-caption")[currentIndex].textContent;
+        }
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById("popup-img").src = images[currentIndex];
+            document.getElementById("popup-caption").textContent = document.querySelectorAll(".gallery-caption")[currentIndex].textContent;
+        }
+    </script>
+
+
+
+
+
+<!-- Footer -->
+	<footer>
+	    <div class="footer-container">
+	        <!-- Logo and company info section -->
+	        <div class="footer-column">
+	            <a href="5& Construction.html" class="footer-logo">5& Construction.</a>
+	            <p class="footer-tagline">Building Future Projects Today.</p>
+	          	<h3>Code Developers:</h3>
+	           	<p>Jason Truong: <a href="https://www.linkedin.com/in/jason-truong-9a0911354/">Linkedin</a></p>
+	            <p>Anthony Turcanu: <a href="www.linkedin.com/in/anthony-turcanu-665177354">Linkedin</a></p>
+	            <p>Harjas Kariha: <a href="https://www.linkedin.com/in/harjas-kariha-a5812623a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Linkedin</a></p>
+	            <p>Mohit Singh: <a href="https://www.linkedin.com/">Linkedin</a></p>
+	        </div>
+	        
+	        <!-- Quick links section -->
+	        <div class="footer-column">
+	            <h4>Quick Links</h4>
+	            <ul class="footer-links">
+	                <li><a href="5& Construction.html#home">Home</a></li>
+	                <li><a href="5& Construction.html#about">About</a></li>
+	                <li><a href="5& Construction.html#services">Services</a></li>
+	                <li><a href="Projects.html">Projects</a></li>
+	                <li><a href="5& Construction.html#contact">Contact</a></li>
+	                <li><a href="5& Construction.html#quote">Get a Quote</a></li>
+	            </ul>
+	        </div>
+	        
+	        <!-- Services section -->
+	        <div class="footer-column">
+	            <h4>Our Services</h4>
+	            <ul class="footer-links">
+	                <li><a href="Kitchen Remodel.html">Kitchen Remodel</a></li>
+	                <li><a href="Bathroom Remodel.html">Bathroom Remodel</a></li>
+	                <li><a href="Basement Remodel.html">Basement Remodel</a></li>
+	                <li><a href="Whole Home Remodel.html">Whole Home Remodel</a></li>
+	                <li><a href="Home Additions.html">Home Additions</a></li>
+	            </ul>
+	        </div>
+	        
+	        <!-- Contact info section -->
+	        <div class="footer-column">
+	            <h4>Contact Us</h4>
+	            <div class="footer-contact">
+	                <p><i class="fas fa-map-marker-alt"></i> 2115 S 380TH ST, Federal Way, WA 98003</p>
+	                <p><i class="fas fa-phone"></i> (253) 740-3355</p>
+	                <p><i class="fas fa-envelope"></i> five_andconstruction@outlook.com</p>
+	                <p><i class="fas fa-clock"></i> Mon-Fri: 6AM - 5PM</p>
+	            </div>
+	        </div>
+	    </div>
+	    
+	    <!-- Bottom copyright bar, with the Privacy Policy and Terms of Service -->
+	    <div class="footer-bottom">
+	        <p>&copy; 2025 5& Construction.Inc. All Rights Reserved</p>
+	        <div class="footer-legal">
+	            <a href="Privacy Policy.html">Privacy Policy</a>
+	            <a href="Terms of Service.html">Terms of Service</a>
+	        </div>
+	    </div>
+	</footer>
+</body>
+</html>

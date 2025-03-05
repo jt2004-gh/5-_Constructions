@@ -1,0 +1,713 @@
+/* Developer:           Description: This is the styling of the website (CSS)
+   Jason Truong
+   Mohit Singh
+   Anthony Turcanu
+   Harjas Kariha*/
+
+
+
+
+:root {
+    --primary: #323437;
+    --accent: darkorange;
+    --secondary: darkorange;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+
+
+
+
+/* Body style*/
+body {
+    background-color: floralwhite;
+    color: darkorange;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+
+
+
+/* Header section */
+header {
+    position: fixed;
+    width: 100%;
+    height: 14%;
+    z-index: 1000;
+    background: transparent;
+    backdrop-filter: blur(10px);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: floralwhite;
+    min-width: 250px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: 2px solid darkorange;
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: darkorange;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: antiquewhite;
+}
+
+.contact-dropdown {
+    padding: 15px;
+    min-width: 300px;
+}
+
+.contact-dropdown p {
+    color: darkorange;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-dropdown i {
+    width: 20px;
+    text-align: center;
+}
+
+.dropbtn .fa-caret-down {
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: 'Bebas Neue';
+    font-size: 2.5rem;
+    color: darkorange;
+    text-decoration: none;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: darkorange;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: darkorange;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+
+
+
+/* Main menu => Background, projects button, etc*/
+.mainMenu {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('kitchen_view.jpeg') center/cover;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.mainMenu h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 3px;
+}
+
+.mainMenu button {
+    background: darkorange;
+    color: antiquewhite;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.mainMenu button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.section {
+    padding: 5rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+
+.section h3 {
+    color: darkorange;
+}
+
+.section a {
+    color: darkorange;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60%;
+    height: 3px;
+    background: darkorange;
+}
+
+
+
+
+
+/* About Section */
+.about-container {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 600px;
+    border: 3px solid darkorange;
+    border-radius: 15px;
+    margin-left: 2rem;
+}
+
+.about-content {
+    flex: 1;
+}
+
+
+
+
+
+
+
+/* Company Stats Banner */
+.stats-banner {
+    background-color: orange;
+    padding: 2rem 5%;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 200px;
+    color: floralwhite;
+    padding: 1.5rem;
+}
+
+.stat-item i {
+    margin-bottom: 1rem;
+    color: floralwhite;
+    transition: transform 0.3s ease;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.stat-item p {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+/* Why choose us scroll banner*/
+#why-choose {
+    padding: 4rem 5%;
+    background-color: floralwhite;
+}
+
+#why-choose h3 {
+    text-align: center;
+    text-decoration: underline;
+
+}
+
+
+.why-choose-container {
+    overflow-x: auto;
+    padding-bottom: 2rem;
+    scrollbar-width: none;
+}
+
+.why-choose-row {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 0;
+    min-width: fit-content;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.why-choose-card {
+    color: floralwhite;
+    text-align: center;
+    flex: 0 0 280px;
+    background-color: orange;
+    border: transparent;
+    transition: all 0.3s ease;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
+    min-height: auto;
+}
+
+.why-choose-card h3 {
+    color: floralwhite;
+    margin-bottom: 1rem;
+}
+
+
+
+
+/* Service cards/grids */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: transparent;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 3px solid darkorange;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    background: transparent;
+}
+
+.service-icon {
+    color: darkorange;
+    margin-bottom: 1rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+
+
+
+/* Contact information + google maps */
+.contact-item {
+    display: flex;
+    flex-direction: center;
+    gap: 1rem;
+}
+
+.contact-item i {
+    color: darkorange;
+    min-width: 40px;
+}
+
+.contact-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    border: 3px solid darkorange;
+    border-radius: 10px;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.2);
+}
+
+.contact-item i {
+    color: darkorange;
+    min-width: 40px;
+}
+
+.contact-text {
+    flex: 1;
+}
+
+.contact-map {
+    flex: 1;
+    min-width: 300px;
+    border: 3px solid darkorange;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+/* Input text box area for Quote Form */
+.quote-form {
+    max-width: 600px;
+    margin: 0;
+    padding: 2.2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 300px;
+}
+
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 2px solid darkorange;
+    color: darkorange;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: darkorange;
+    box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.2);
+}
+
+button[type="submit"] {
+    background: darkorange;
+    color: antiquewhite;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+button[type="submit"]:hover {
+    background: transparent;
+}
+
+
+
+
+
+/* Quick guide for project estimation */
+.estimator-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 5rem;
+    margin-bottom: 1.5rem;
+    color: floralwhite;
+}
+
+.estimator-item i {
+    flex-shrink: 0;
+    min-width: 30px;
+    text-align: center;
+    font-size: 1.75rem;
+    color: floralwhite;
+}
+
+.estimator-item p {
+    margin: 0.5rem 0;
+}
+
+.estimator-item h4 {
+    margin: 0.5rem 1;
+}
+
+.estimator-item div {
+    flex-grow: 1;
+    margin-right: 0;
+}
+
+.estimator-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    color: floralwhite;
+}
+
+.estimator-header h3 {
+    margin: 0;
+    width: 100%;
+    text-decoration: underline;
+    color: floralwhite;
+}
+
+.estimator-header a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+.quote-section .section {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.quote-container {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.quote-form {
+    flex: 0 1 600px;
+    margin: 0;
+}
+
+.cost-estimator {
+    flex: 1;
+    padding: 5rem;
+    background: orange;
+    border: transparent;
+    border-radius: 10px;
+    max-width: none;
+    min-width: 300px;
+}
+
+.cost-estimator h3 {
+    color: floralwhite;
+}
+
+
+
+
+
+/* Footer */
+footer {
+    background-color: #323437;
+    color: #f5f5f5;
+    padding: 3rem 5%;
+    width:100%;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 2rem;
+    width: 100%;
+}
+
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: darkorange;
+    text-decoration: none;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.footer-column h3 {
+    font-style: italic;
+    color: #ccc;
+}
+
+.footer-column p {
+    font-style: italic;
+    color: #ccc;
+}
+
+.footer-tagline {
+    margin-bottom: 1.5rem;
+    color: #ccc;
+    font-style: italic;
+}
+
+.footer-column h4 {
+    color: darkorange;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: darkorange;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: antiquewhite;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: darkorange;
+    transform: translateX(5px);
+}
+
+.footer-contact p {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-contact i {
+    color: darkorange;
+    width: 20px;
+}
+
+.footer-bottom {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 3px solid darkorange;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: orange;
+    width: 100%;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-legal a {
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    color: darkorange;
+}

@@ -1,0 +1,480 @@
+<!-- Developers:        Description: Structure of the Basement Remodel Section (HTML)
+     Jason Truong
+     Mohit Singh
+     Anthony Turcanu
+     Harjas Kariha -->
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Basement Remodel | 5& Construction</title>
+    <link rel="stylesheet" type="text/css" href="5_&_Construction.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        /* Header */
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+            padding-top: 120px;
+        }
+
+
+        header {
+            position: fixed;
+            width: 100%;
+            height: 14%;
+            z-index: 1000;
+            background: transparent;
+            backdrop-filter: blur(10px);
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue';
+            font-size: 2.5rem;
+            color: darkorange;
+            text-decoration: none;
+            letter-spacing: 3px;
+        }
+
+        body {
+            background-color: floralwhite;
+            font-family: 'Roboto', sans-serif;
+            color: darkorange;
+            margin: 0;
+            line-height: 1.6;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: floralwhite;
+            min-width: 250px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border: 2px solid darkorange;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: darkorange;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            transition: 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: antiquewhite;
+        }
+
+        .contact-dropdown {
+            padding: 15px;
+            min-width: 300px;
+        }
+
+        .contact-dropdown p {
+            color: darkorange;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-dropdown i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .dropbtn .fa-caret-down {
+            margin-left: 5px;
+            font-size: 0.8em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue';
+            font-size: 2.5rem;
+            color: darkorange;
+            text-decoration: none;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: darkorange;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: darkorange;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+
+
+
+        /* Basement Remodel Page Styling */
+        .basement-remodel-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: darkorange;
+        }
+
+        .basement-remodel-content .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .basement-remodel-content .content-wrapper {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .basement-remodel-content h2 {
+            text-align: left;
+            color: darkorange;
+            border-bottom: 3px solid darkorange;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .basement-remodel-content h3 {
+            color: darkorange;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid darkorange;
+            padding-bottom: 10px;
+        }
+
+        .remodel-benefits ul,
+        .remodel-process ol {
+            background-color: orange;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .remodel-benefits li,
+        .remodel-process li {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .remodel-benefits li strong,
+        .remodel-process li strong {
+            color: darkorange;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .popular-basement-uses .uses-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .popular-basement-uses .use-item {
+            background-color: antiquewhite;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .popular-basement-uses .use-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .popular-basement-uses .use-item h4 {
+            color: darkorange;
+            margin-bottom: 10px;
+        }
+
+        .call-to-action {
+            text-align: center;
+            background-color: antiquewhite;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .call-to-action h3 {
+            color: darkorange;
+            margin-bottom: 15px;
+            border-bottom: none;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: darkorange;
+            color: floralwhite;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <h1>Basement Remodel</h1>
+
+
+	<header>
+        <nav>
+            <a href="5& Construction.html" class="logo">5& Construction.</a>
+            <div class="nav-links">
+                <a href="5& Construction.html#home">Home</a>
+                <a href="5& Construction.html#about">About</a>
+                <div class="dropdown">
+                    <a href="5& Construction.html#services" class="dropbtn">Services <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="Kitchen Remodel.html">Kitchen Remodel</a>
+                        <a href="Bathroom Remodel.html">Bathroom Remodel</a>
+                        <a href="Basement Remodel.html">Basement Remodel</a>
+                        <a href="Whole Home Remodel.html">Whole Home Remodel</a>
+                        <a href="Home Additions.html">Home Additions</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="5& Construction.html#contact" class="dropbtn">Contact Info <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content contact-dropdown">
+                        <p><i class="fas fa-phone"></i> (253) 740-3355</p>
+                        <p><i class="fas fa-envelope"></i> five_andconstruction@outlook.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 2115 S 380TH ST, Federal Way, WA 98003</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 6AM - 5PM</p>
+                    </div>
+                </div>
+                <a href="5& Construction.html#quote">Get a Quote</a>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <section class="basement-remodel-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <h2>Transform Your Basement: Unlock Hidden Potential</h2>
+                
+                <div class="remodel-benefits">
+                    <h3>Why Remodel Your Basement?</h3>
+                    <ul>
+                        <li>
+                            <strong>Increase Living Space</strong>
+                            Transform an underutilized area into a functional living space that adds real value to your home. Whether you need a home office, entertainment room, or guest suite, your basement offers unlimited potential.
+                        </li>
+                        <li>
+                            <strong>Boost Property Value</strong>
+                            A well-designed basement remodel can increase your home's market value by up to 70% of the renovation cost. It's a smart investment that pays dividends when you decide to sell.
+                        </li>
+                        <li>
+                            <strong>Energy Efficiency</strong>
+                            Modern basement remodels include improved insulation and moisture control, helping to reduce your home's overall energy consumption and create a more comfortable environment.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="remodel-process">
+                    <h3>Our Basement Remodeling Process</h3>
+                    <ol>
+                        <li>
+                            <strong>Initial Consultation</strong>
+                            We discuss your vision, needs, budget, and specific basement requirements.
+                        </li>
+                        <li>
+                            <strong>Detailed Design Planning</strong>
+                            Our designers create detailed sketched of your dream basement.
+                        </li>
+                        <li>
+                            <strong>Material Selection</strong>
+                            Choose from materials the customer wants in their basement.
+                        </li>
+                        <li>
+                            <strong>Precise Construction</strong>
+                            Our expert craftsmen execute the project with minimal disruption.
+                        </li>
+                        <li>
+                            <strong>Final Walkthrough</strong>
+                            We add finishing touches to complete your basement's new look, give a final walkthrough and review to the you, and ensure every detail meets our high standards and your expectations.
+
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="popular-basement-uses">
+                    <h3>Popular Basement Transformation Ideas</h3>
+                    <div class="uses-grid">
+                        <div class="use-item">
+                            <h4>Home Theater</h4>
+                            <p>Create an immersive entertainment space with soundproofing and custom lighting.</p>
+                        </div>
+                        <div class="use-item">
+                            <h4>Home Gym</h4>
+                            <p>Design a dedicated fitness area with proper flooring and ventilation.</p>
+                        </div>
+                        <div class="use-item">
+                            <h4>Home Office</h4>
+                            <p>Craft a quiet, professional workspace with excellent lighting and connectivity.</p>
+                        </div>
+                        <div class="use-item">
+                            <h4>Guest Suite</h4>
+                            <p>Add a comfortable, private living area for visitors with a bedroom and bathroom.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="call-to-action">
+                    <h3>Ready to Reimagine Your Basement?</h3>
+                    <p>Contact 5& Construction for a basement remodel consultation and quote.</p>
+                    <br>
+                    <a href="5& Construction.html#quote" class="cta-button">Get Your Free Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+	<footer>
+        <div class="footer-container">
+            <!-- Logo and company info section -->
+            <div class="footer-column">
+                <a href="5& Construction.html" class="footer-logo">5& Construction.</a>
+                <p class="footer-tagline">Building Future Projects Today.</p>
+                <h3>Code Developers:</h3>
+                <p>Jason Truong: <a href="https://www.linkedin.com/in/jason-truong-9a0911354/">Linkedin</a></p>
+                <p>Anthony Turcanu: <a href="www.linkedin.com/in/anthony-turcanu-665177354">Linkedin</a></p>
+                <p>Harjas Kariha: <a href="https://www.linkedin.com/in/harjas-kariha-a5812623a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Linkedin</a></p>
+                <p>Mohit Singh: <a href="https://www.linkedin.com/">Linkedin</a></p>
+            </div>
+            
+            <!-- Quick links section -->
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="5& Construction.html#home">Home</a></li>
+                    <li><a href="5& Construction.html#about">About</a></li>
+                    <li><a href="5& Construction.html#services">Services</a></li>
+                    <li><a href="Projects.html">Projects</a></li>
+                    <li><a href="5& Construction.html#contact">Contact</a></li>
+                    <li><a href="5& Construction.html#quote">Get a Quote</a></li>
+                </ul>
+            </div>
+            
+            <!-- Services section -->
+            <div class="footer-column">
+                <h4>Our Services</h4>
+                <ul class="footer-links">
+                    <li><a href="Kitchen Remodel.html">Kitchen Remodel</a></li>
+                    <li><a href="Bathroom Remodel.html">Bathroom Remodel</a></li>
+                    <li><a href="Basement Remodel.html">Basement Remodel</a></li>
+                    <li><a href="Whole Home Remodel.html">Whole Home Remodel</a></li>
+                    <li><a href="Home Additions.html">Home Additions</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact info section -->
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> 2115 S 380TH ST, Federal Way, WA 98003</p>
+                    <p><i class="fas fa-phone"></i> (253) 740-3355</p>
+                    <p><i class="fas fa-envelope"></i> five_andconstruction@outlook.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 6AM - 5PM</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom copyright bar -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 5& Construction.Inc. All Rights Reserved</p>
+            <div class="footer-legal">
+                <a href="Privacy Policy.html">Privacy Policy</a>
+                <a href="Terms of Service.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
